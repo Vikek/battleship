@@ -14,5 +14,7 @@ export const Ship = (length) => {
         return sunk;
     }
 
-    return { hit, isSunk };
+    function getLength() { return shipLength; }
+
+    return { hit, isSunk, getLength };
 }
