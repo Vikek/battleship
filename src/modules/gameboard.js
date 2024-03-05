@@ -20,21 +20,22 @@ export const Gameboard = () => {
     }
 
     function receiveAttack(coordinates) {
-        boardNode = board[coordinates[0]][coordinates[1]];
+        const x = coordinates[0];
+        const y = coordinates[1];
 
-        if (boardNode.boardShip !== null) {
-            boardNode.boardShip.hit();
+        if (board[x][y].boardShip !== null) {
+            board[x][y].boardShip.hit();
             successfulHits++;
         }
         
-        boardNode.attacked = true;
+        board[x][y].attacked = true;
 
         if (successfulHits >= maxHits) {
             loseEvent();
         }
     }
 
-    return { placeShip, receiveAttack };
+    return { placeShip, receiveAttack, board };
 }
 
 const BoardNode = () => {
