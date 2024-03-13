@@ -1,5 +1,5 @@
-export const Player = (name) => {
-    const name = name;
+export const Player = (nameInput) => {
+    const name = nameInput;
 
     const shipFleet = [];
 
